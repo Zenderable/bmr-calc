@@ -3,6 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:check_your_bmr_and_bmi/constants.dart';
 import 'package:check_your_bmr_and_bmi/components/background_card.dart';
 import 'package:check_your_bmr_and_bmi/components/icon_content.dart';
+import 'package:check_your_bmr_and_bmi/components/buttons.dart';
+import 'package:check_your_bmr_and_bmi/components/calculations.dart';
+import 'package:check_your_bmr_and_bmi/screens/second_page.dart';
 
 enum GenderType {
   male,
@@ -25,7 +28,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kAppBarColor,
-        title: Center(child: Text('Check Your BMR')),
+        title: Center(child: Text('Check Your BMR and BMI')),
       ),
       body: Column(
         children: <Widget>[
@@ -232,59 +235,52 @@ class _HomeState extends State<Home> {
           ),
           Expanded(
             flex: 1,
-            child: GestureDetector(
-              onTap: null,
-              child: Container(
-                width: double.infinity,
-                child: BackgroundCard(
-                  color: kBottomButtonColor,
-                  childContainer: Center(
-                    child: Text('Calculate'),
-                  ),
-                ),
-              ),
+            child: Button(
+              color: kBottomButtonColor,
+              text: Text('CALCULATE'),
+              onTap: () {
+                if (selectedGender == null) {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text("Warning!"),
+                        content: Text(
+                            "You did not choose gender in this beautiful application. It will not work without it."),
+                        actions: <Widget>[
+                          FlatButton(
+                            child: Text("Close"),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                } else {
+                  Calculator bmi = Calculator(
+                      height: height,
+                      weight: weight,
+                      gender: selectedGender,
+                      age: age);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SecondPage(
+                            bmiResult: bmi.calculateBMI(),
+                            resultText: bmi.getResult(),
+                            interpretation: bmi.getInterpretation(),
+                            bmrResult: bmi.calculateBMR(),
+                          ),
+                    ),
+                  );
+                }
+              },
             ),
           )
-//          BottomButton(
-//            text: 'CALCULATE',
-//            onTap: () {
-//              Calculator calc = Calculator(height: height, weight: weight);
-//              Navigator.push(
-//                context,
-//                MaterialPageRoute(
-//                  builder: (context) => ResultsPage(
-//                    bmiResult: calc.calculateBMI(),
-//                    resultText: calc.getResult(),
-//                    interpretation: calc.getInterpretation(),
-//                  ),
-//                ),
-//              );
-//            },
-//          ),
         ],
       ),
-    );
-  }
-}
-
-class RoundedIconButton extends StatelessWidget {
-  RoundedIconButton({this.icon, this.action, this.color});
-  final IconData icon;
-  final Function action;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: action,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: color,
     );
   }
 }

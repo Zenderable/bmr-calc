@@ -8,7 +8,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="check_your_bmr_and_bmi"
+        android:label="Check Your BMR/BMI"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

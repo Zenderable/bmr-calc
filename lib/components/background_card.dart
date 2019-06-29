@@ -15,7 +15,7 @@ class BackgroundCard extends StatelessWidget {
         margin: EdgeInsets.all(15.0),
         decoration: BoxDecoration(
           color: color,
-          borderRadius: BorderRadius.circular(5.0),
+          borderRadius: BorderRadius.circular(25.0),
         ),
       ),
     );

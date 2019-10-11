@@ -34,16 +34,16 @@ class RoundedIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: action,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
+    return ClipOval(
+      child: Material(
+        elevation: 5,
+        color: color, // button color
+        child: InkWell(
+            splashColor: Color(0xFFF1008F), // inkwell color
+            child: SizedBox(width: 50, height: 50, child: Icon(icon)),
+            //onLongPress: action,
+            onTap: action),
       ),
-      shape: CircleBorder(),
-      fillColor: color,
     );
   }
 }

@@ -11,47 +11,47 @@ const kNumberStyle = TextStyle(
   color: Colors.grey,
   fontWeight: FontWeight.w900,
   fontSize: 50.0,
+  fontFamily: "Jaapokki",
 );
 
 const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
   color: Color(0xFF8D8E98),
+  fontFamily: "Jaapokki",
 );
 
 const kResultsTitleTextStyle = TextStyle(
-  color: Colors.grey,
-  fontWeight: FontWeight.w700,
-  fontSize: 60.0,
-);
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+    fontSize: 28.0,
+    fontFamily: "Jaapokki");
 
 const kResultsTextStyle = TextStyle(
+  fontFamily: "Jaapokki",
   fontWeight: FontWeight.bold,
-  fontSize: 18.0,
+  fontSize: 12.0,
   color: Color(0xFF48C67D),
 );
 
 const kBodyTextStyle = TextStyle(
   color: Color(0xFF591CAE),
   fontWeight: FontWeight.w400,
-  fontSize: 22.0,
+  fontSize: 15.0,
+  fontFamily: "Jaapokki",
 );
 
 const kInfoTextStyle = TextStyle(
   color: Color(0xFF591CAE),
-  fontWeight: FontWeight.w300,
-  fontSize: 18.0,
+  fontWeight: FontWeight.bold,
+  fontSize: 30.0,
+  fontFamily: "Jaapokki",
 );
 
 const kBMITextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 80.0,
   color: Color(0xFF417DE0),
-);
-
-const kWhatItMean = TextStyle(
-  fontSize: 30.0,
-  fontWeight: FontWeight.bold,
-  color: Color(0xFF591CAE),
+  fontFamily: "Jaapokki",
 );
 
 const kBMRWarning = TextStyle(
@@ -62,12 +62,14 @@ const kBMRWarning = TextStyle(
 
 const kBMRTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 45.0,
-  color: Color(0xFFF95F49),
+  fontSize: 28.0,
+  color: Color(0xFF599AFF),
+  fontFamily: "Jaapokki",
 );
 
 const kKcalTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
-  fontSize: 20.0,
-  color: Color(0xFFF95F49),
+  fontSize: 15.0,
+  color: Color(0xFF599AFF),
+  fontFamily: "Jaapokki",
 );

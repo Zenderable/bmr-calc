@@ -12,6 +12,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   font_awesome_flutter: ^8.4.0
+  share: ^0.6.2+3
 
 dev_dependencies:
   flutter_test:
@@ -21,3 +22,7 @@ flutter:
   uses-material-design: true
   assets:
    - images/
+  fonts:
+    - family: Jaapokki
+      fonts:
+        - asset: fonts/Jaapokki-Regular.otf

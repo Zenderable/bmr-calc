@@ -28,7 +28,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kAppBarColor,
-        title: Center(child: Text('Check Your BMR and BMI')),
+        title: Center(
+          child: Text(
+            'BMR Calc',
+            style: TextStyle(
+              fontFamily: "Jaapokki",
+            ),
+          ),
+        ),
       ),
       body: Column(
         children: <Widget>[
@@ -42,51 +49,57 @@ class _HomeState extends State<Home> {
                     childContainer: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'WEIGHT',
-                          style: kLabelTextStyle,
+                        Flexible(
+                          child: Text(
+                            'WEIGHT',
+                            style: kLabelTextStyle,
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.baseline,
-                          textBaseline: TextBaseline.alphabetic,
-                          children: <Widget>[
-                            Text(
-                              weight.toString(),
-                              style: kNumberStyle,
-                            ),
-                            Text(
-                              'kg',
-                              style: kLabelTextStyle,
-                            )
-                          ],
+                        Flexible(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: <Widget>[
+                              Text(
+                                weight.toString(),
+                                style: kNumberStyle,
+                              ),
+                              Text(
+                                'kg',
+                                style: kLabelTextStyle,
+                              )
+                            ],
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            RoundedIconButton(
-                                color: Color(0xFF4CAF50),
-                                icon: FontAwesomeIcons.minus,
-                                action: () {
-                                  setState(() {
-                                    weight--;
-                                    if (weight <= 0) {
-                                      weight = 0;
-                                    }
-                                  });
-                                }),
-                            SizedBox(
-                              width: 8.0,
-                            ),
-                            RoundedIconButton(
-                                color: Color(0xFF0288D1),
-                                icon: FontAwesomeIcons.plus,
-                                action: () {
-                                  setState(() {
-                                    weight++;
-                                  });
-                                }),
-                          ],
+                        Flexible(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundedIconButton(
+                                  color: Color(0xFF01DC24),
+                                  icon: FontAwesomeIcons.minus,
+                                  action: () {
+                                    setState(() {
+                                      weight--;
+                                      if (weight <= 0) {
+                                        weight = 0;
+                                      }
+                                    });
+                                  }),
+                              SizedBox(
+                                width: 8.0,
+                              ),
+                              RoundedIconButton(
+                                  color: Color(0xFF00D1FF),
+                                  icon: FontAwesomeIcons.plus,
+                                  action: () {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                  }),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -98,40 +111,46 @@ class _HomeState extends State<Home> {
                     childContainer: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'AGE',
-                          style: kLabelTextStyle,
+                        Flexible(
+                          child: Text(
+                            'AGE',
+                            style: kLabelTextStyle,
+                          ),
                         ),
-                        Text(
-                          age.toString(),
-                          style: kNumberStyle,
+                        Flexible(
+                          child: Text(
+                            age.toString(),
+                            style: kNumberStyle,
+                          ),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            RoundedIconButton(
-                                color: Color(0xFF4CAF50),
-                                icon: FontAwesomeIcons.minus,
-                                action: () {
-                                  setState(() {
-                                    age--;
-                                    if (age <= 0) {
-                                      age = 0;
-                                    }
-                                  });
-                                }),
-                            SizedBox(
-                              width: 8.0,
-                            ),
-                            RoundedIconButton(
-                                color: Color(0xFF0288D1),
-                                icon: FontAwesomeIcons.plus,
-                                action: () {
-                                  setState(() {
-                                    age++;
-                                  });
-                                }),
-                          ],
+                        Flexible(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              RoundedIconButton(
+                                  color: Color(0xFF01DC24),
+                                  icon: FontAwesomeIcons.minus,
+                                  action: () {
+                                    setState(() {
+                                      age--;
+                                      if (age <= 0) {
+                                        age = 0;
+                                      }
+                                    });
+                                  }),
+                              SizedBox(
+                                width: 8.0,
+                              ),
+                              RoundedIconButton(
+                                  color: Color(0xFF00D1FF),
+                                  icon: FontAwesomeIcons.plus,
+                                  action: () {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  }),
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -147,24 +166,28 @@ class _HomeState extends State<Home> {
               childContainer: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text(
-                    'HEIGHT',
-                    style: kLabelTextStyle,
+                  Flexible(
+                    child: Text(
+                      'HEIGHT',
+                      style: kLabelTextStyle,
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.baseline,
-                    textBaseline: TextBaseline.alphabetic,
-                    children: <Widget>[
-                      Text(
-                        height.toString(),
-                        style: kNumberStyle,
-                      ),
-                      Text(
-                        'cm',
-                        style: kLabelTextStyle,
-                      ),
-                    ],
+                  Flexible(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                        Text(
+                          height.toString(),
+                          style: kNumberStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
                   ),
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
@@ -237,7 +260,12 @@ class _HomeState extends State<Home> {
             flex: 1,
             child: Button(
               color: kBottomButtonColor,
-              text: Text('CALCULATE'),
+              text: Text(
+                'CALCULATE',
+                style: TextStyle(
+                  fontFamily: "Jaapokki",
+                ),
+              ),
               onTap: () {
                 if (selectedGender == null) {
                   showDialog(
@@ -268,11 +296,11 @@ class _HomeState extends State<Home> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => SecondPage(
-                            bmiResult: bmi.calculateBMI(),
-                            resultText: bmi.getResult(),
-                            interpretation: bmi.getInterpretation(),
-                            bmrResult: bmi.calculateBMR(),
-                          ),
+                        bmiResult: bmi.calculateBMI(),
+                        resultText: bmi.getResult(),
+                        interpretation: bmi.getInterpretation(),
+                        bmrResult: bmi.calculateBMR(),
+                      ),
                     ),
                   );
                 }

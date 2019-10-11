@@ -15,7 +15,7 @@
 
 > For example you can set your goal and check your bmi. Maybe you will try? 🤪
 
-<img src="https://i.imgur.com/4WT8E3F.gif" width="250"><img src="https://i.imgur.com/0M72aVn.gif" width="250">
+<img src="https://i.imgur.com/4WT8E3F.gif" width="250"> <img src="https://i.imgur.com/0M72aVn.gif" width="250">
 
 
 ---

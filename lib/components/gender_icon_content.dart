@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:check_your_bmr_and_bmi/constants.dart';
 
-class IconContent extends StatelessWidget {
-  IconContent({@required this.sex, @required this.label, @required this.color});
+class GenderIconContent extends StatelessWidget {
+  GenderIconContent(
+      {@required this.sex, @required this.label, @required this.color});
   final String label;
   final IconData sex;
   final Color color;

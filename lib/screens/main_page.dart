@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:check_your_bmr_and_bmi/constants.dart';
 import 'package:check_your_bmr_and_bmi/components/background_card.dart';
-import 'package:check_your_bmr_and_bmi/components/icon_content.dart';
+import 'package:check_your_bmr_and_bmi/components/gender_icon_content.dart';
 import 'package:check_your_bmr_and_bmi/components/buttons.dart';
 import 'package:check_your_bmr_and_bmi/components/calculations.dart';
 import 'package:check_your_bmr_and_bmi/screens/second_page.dart';
@@ -224,7 +224,7 @@ class _HomeState extends State<Home> {
                     color: selectedGender == GenderType.male
                         ? kActiveCardColor
                         : kInactiveCardColor,
-                    childContainer: IconContent(
+                    childContainer: GenderIconContent(
                       color: Color(0xFF18C0F4),
                       sex: FontAwesomeIcons.mars,
                       label: 'MALE',
@@ -241,7 +241,7 @@ class _HomeState extends State<Home> {
                     color: selectedGender == GenderType.female
                         ? kActiveCardColor
                         : kInactiveCardColor,
-                    childContainer: IconContent(
+                    childContainer: GenderIconContent(
                       color: Color(0xFFF1008F),
                       sex: FontAwesomeIcons.venus,
                       label: 'FEMALE',
